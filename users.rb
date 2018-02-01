@@ -64,17 +64,21 @@ p users["Erik"][:lottery_numbers]
 p users["Avril"][:pets][0][:species]
 #Get the smallest of Erik's lottery numbers
 p users["Erik"][:lottery_numbers].sort[0]
+#|or|
+p users["Erik"][:lottery_numbers].min()
 #Return an array of Avril's lottery numbers that are even
-  lottery_numbers_array = users["Avril"][:lottery_numbers]
-for number in lottery_numbers_array
-  if number % 2 == 0
-    p number
+  result = []
+for number in users["Avril"][:lottery_numbers]
+  if (number.even?)
+    result.push(number)
   end
 end
 
+p reuslt
+
 #Erik is one lottery number short! Add the number 7 to be included in his lottery numbers
 users["Erik"][:lottery_numbers].push(7)
-p users["Erik"][:lottery_numbers]
+users["Erik"][:lottery_numbers]<< 7 #shovel operator, works same as push
 
 #Change Erik's hometown to Edinburgh
 users["Erik"][:home_town].replace("Edinburgh")
@@ -82,6 +86,15 @@ users["Erik"][:home_town].replace("Edinburgh")
 #Add a pet dog to Erik called "Fluffy"
 users["Erik"][:pets].push(name:"Fluffy")
 users["Erik"][:pets].push(species:"dog")
+
+#|or|
+
+dog = {
+  :name => "fluffy"
+  :species => "dog"
+      {
+
+users["Erik"][:pets].push({dog})
 
 #Add another person to the users hash
 users["Amy"] = {}

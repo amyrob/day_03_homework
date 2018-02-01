@@ -19,17 +19,21 @@ stops.delete("Livingston")
 stops.delete_at(2)
 
 #How many stops there are in the array?
-how_many = stops.length
-p how_many
+stops.length()
+stops.size()
+stops.count()
+
 #How many ways can we return "Falkirk High" from the array?
-p stops[2] #or whichever number it is
-p stops[-5] #or whichever number it is
-p stops.index("Falkirk High")
+stops[2] #or whichever number it is
+stops[-5] #or whichever number it is
+stops.at(2)
+stops.at(-5)
 
 p "------------"
 
 #Reverse the positions of the stops in the array
-stops.reverse
+stops.reverse() #will print a modified version of the original array
+stops.reverse!() #will modify the original array
 #Print out all the stops using a for loop
 
 for stations in stops
